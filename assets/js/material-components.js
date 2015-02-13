@@ -1,11 +1,10 @@
-angular.module('materialtests', [
-  'ngRoute',
-  'materialtests.input'
+angular.module('material.components', [
+  'material.components.input'
 ])
 
-angular.module('materialtests.input', []);
+angular.module('material.components.input', []);
 
-angular.module('materialtests')
+angular.module('site')
   .config(['$routeProvider', function($routeProvider) {
 
     $routeProvider
@@ -20,9 +19,4 @@ angular.module('materialtests')
         redirectTo: '/'
       })
 
-  }])
-
-angular.module('materialtests.input')
-  .controller('InputViewController', ['$scope', function($scope) {
-    
   }])
