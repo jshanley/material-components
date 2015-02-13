@@ -1,4 +1,4 @@
-angular.module('materialtests')
+angular.module('site')
   .config(['$routeProvider', function($routeProvider) {
 
     $routeProvider

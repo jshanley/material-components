@@ -1,4 +1,4 @@
-angular.module('materialtests.input')
+angular.module('material.input')
   .controller('InputViewController', ['$scope', function($scope) {
-    
+
   }])

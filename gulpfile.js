@@ -3,6 +3,8 @@ var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     sass        = require('gulp-sass');
 
+var del         = require('del');
+
 gulp.task('connect', function() {
   connect.server({
     root: 'build',
@@ -11,12 +13,21 @@ gulp.task('connect', function() {
   });
 })
 
-gulp.task('js', function() {
-  gulp.src(['src/modules/**/_module.js', 'src/modules/**/*.js'])
-    .pipe(concat('application.js'))
+gulp.task('site-js', function() {
+  gulp.src(['src/site/**/_module.js', 'src/site/**/*.js'])
+    .pipe(concat('site.js'))
     .pipe(gulp.dest('build/assets/js'))
     .pipe(connect.reload());
 })
+
+gulp.task('component-js', function() {
+  gulp.src(['src/components/**/_module.js', 'src/components/**/*.js'])
+    .pipe(concat('material-components.js'))
+    .pipe(gulp.dest('build/assets/js'))
+    .pipe(connect.reload());
+})
+
+gulp.task('js', ['component-js', 'site-js'])
 
 gulp.task('scss', function() {
   gulp.src('src/application.scss')
@@ -30,15 +41,15 @@ gulp.task('copy-bower', function() {
     .pipe(gulp.dest('build/bower'));
 })
 
-gulp.task('copy-views', function() {
-  gulp.src('src/views/**/*.html')
+gulp.task('copy-site-views', function() {
+  gulp.src('src/site/views/**/*.html')
     .pipe(gulp.dest('build/views'))
     .pipe(connect.reload());
 })
 
-gulp.task('copy-templates', function() {
-  gulp.src('src/modules/**/*.html')
-    .pipe(gulp.dest('build/modules'))
+gulp.task('copy-component-templates', function() {
+  gulp.src('src/components/**/*.html')
+    .pipe(gulp.dest('build/components'))
     .pipe(connect.reload());
 })
 
@@ -48,14 +59,17 @@ gulp.task('copy-index', function() {
     .pipe(connect.reload());
 })
 
-gulp.task('copy', ['copy-bower', 'copy-index','copy-views', 'copy-templates']);
+gulp.task('copy', ['copy-bower', 'copy-index','copy-site-views', 'copy-component-templates']);
 
 gulp.task('watch', function() {
-  gulp.watch('src/modules/**/*.js', ['js']);
-  gulp.watch('src/views/**/*.html', ['copy-views']);
-  gulp.watch('src/modules/**/*.html', ['copy-templates']);
+  gulp.watch('src/components/**/*.js', ['component-js']);
+  gulp.watch('src/components/**/*.scss', ['scss']);
+  gulp.watch('src/components/**/*.html', ['copy-component-templates']);
+  gulp.watch('src/site/**/*.js', ['site-js']);
+  gulp.watch('src/site/**/*.scss', ['scss'])
+  gulp.watch('src/site/views/**/*.html', ['copy-site-views']);
   gulp.watch('src/index.html', ['copy-index']);
-  gulp.watch(['src/application.scss', 'src/modules/**/*.scss'], ['scss']);
+  gulp.watch('src/application.scss', ['scss']);
 })
 
 gulp.task('build', ['js', 'scss', 'copy'])
