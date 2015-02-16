@@ -3,7 +3,8 @@ var gulp        = require('gulp'),
     concat      = require('gulp-concat'),
     sass        = require('gulp-sass');
 
-var del         = require('del');
+var sys = require('sys'),
+    exec = require('child_process').exec;
 
 gulp.task('connect', function() {
   connect.server({
@@ -70,6 +71,10 @@ gulp.task('watch', function() {
   gulp.watch('src/site/views/**/*.html', ['copy-site-views']);
   gulp.watch('src/index.html', ['copy-index']);
   gulp.watch('src/application.scss', ['scss']);
+})
+
+gulp.task('clean', function() {
+  exec('rm -rf ' + __dirname + '/build/*')
 })
 
 gulp.task('build', ['js', 'scss', 'copy'])

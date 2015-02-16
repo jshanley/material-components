@@ -1,0 +1,45 @@
+@import "variables";
+
+.material-input-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 72px;
+}
+
+.material-input-type-text {
+  padding-top: 32px;
+  height: 32px;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  &:focus {
+    border-bottom: 2px solid $material-accent-color;
+  }
+}
+
+.material-floating-label {
+  position: absolute;
+  pointer-events: none;
+  color: $material-input-placeholder-color;
+  &.focused {
+    color: $material-accent-color;
+  }
+}
+
+@mixin material-input-colors($text: black, $placeholder: #ccc, $accent: #2ae) {
+  .material-input-type-text {
+    color: $text;
+    border-color: $placeholder;
+    &:focus {
+      border-color: $accent;
+    }
+  }
+  .material-floating-label {
+    color: $placeholder;
+    &.focused {
+      color: $accent;
+    }
+  }
+}

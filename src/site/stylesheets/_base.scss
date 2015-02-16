@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,300italic,400|Roboto+Condensed:300italic,400italic,700italic,400,300,700);
+
+body {
+  font: normal 16px 'Roboto', sans-serif;
+  background-color: #efefef;
+}
+
+h1,h2,h3,h4,h5,h6 { font-weight: 700; }
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.125em; }
+h6 { font-size: 1em; }
+
+.page {
+  padding: 2em;
+}
+
+input {
+  font-size: 16px;
+}
+
+.card {
+  @include material-elevation(1);
+  padding: 1em;
+  width: 250px;
+}
+
+.input-example {
+  margin: 2em 0;
+}
+
+.input-example.example1 { background-color: white; }
+.input-example.example2 {
+  @include material-input-colors($placeholder: #777, $text: white);
+  background-color: #333;
+}
