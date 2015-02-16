@@ -1,0 +1,111 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,300italic,400|Roboto+Condensed:300italic,400italic,700italic,400,300,700);
+/* COMPONENTS */
+.material-input-wrapper {
+  display: inline-block;
+  position: relative;
+  height: 72px; }
+
+.material-input-type-text {
+  padding-top: 32px;
+  height: 32px;
+  font-size: 16px;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent; }
+  .material-input-type-text:focus {
+    border-bottom: 2px solid #2ae; }
+
+.material-floating-label {
+  position: absolute;
+  pointer-events: none;
+  color: #ccc; }
+  .material-floating-label.focused {
+    color: #2ae; }
+
+/* SITE */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font: normal 16px 'Roboto', sans-serif;
+  background-color: #efefef; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700; }
+
+h1 {
+  font-size: 2em; }
+
+h2 {
+  font-size: 1.75em; }
+
+h3 {
+  font-size: 1.5em; }
+
+h4 {
+  font-size: 1.25em; }
+
+h5 {
+  font-size: 1.125em; }
+
+h6 {
+  font-size: 1em; }
+
+.page {
+  padding: 2em; }
+
+input {
+  font-size: 16px; }
+
+.card {
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  padding: 1em;
+  width: 250px; }
+
+.input-example {
+  margin: 2em 0; }
+
+.input-example.example1 {
+  background-color: white; }
+
+.input-example.example2 {
+  background-color: #333; }
+  .input-example.example2 .material-input-type-text {
+    color: white;
+    border-color: #777; }
+    .input-example.example2 .material-input-type-text:focus {
+      border-color: #2ae; }
+  .input-example.example2 .material-floating-label {
+    color: #777; }
+    .input-example.example2 .material-floating-label.focused {
+      color: #2ae; }
