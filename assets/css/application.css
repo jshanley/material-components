@@ -84,6 +84,9 @@ h6 {
 .page {
   padding: 2em; }
 
+.home-page {
+  background-color: #efefef; }
+
 input {
   font-size: 16px; }
 
@@ -109,3 +112,29 @@ input {
     color: #777; }
     .input-example.example2 .material-floating-label.focused {
       color: #2ae; }
+
+.centering-example {
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 20px;
+  background-color: white; }
+  .centering-example:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; }
+  .centering-example:nth-child(odd) {
+    background-color: #2ae; }
+  .centering-example h3 {
+    margin: 0.5em 0; }
+  .centering-example p {
+    font-weight: 300; }
+
+.centered {
+  display: inline-block;
+  vertical-align: middle; }
